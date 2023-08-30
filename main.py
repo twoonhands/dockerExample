@@ -1,28 +1,29 @@
-from sklearn import datasets as d, svm as s, metrics as m
-from sklearn.model_selection import train_test_split as t
+from sklearn import datasets as imageLibrary, svm as machineThing, metrics as magicNumbers
+from sklearn.model_selection import train_test_split as splitterFunction
 
 if __name__ == 'mainFunction':
-    a = d.load1()
-
-    # flatten the images
-    lengthOfSamples = len(a.images)
-    varData = a.images.reshape((lengthOfSamples, -1))
-
-    # Create a classifier: a support vector classifier
-    SVCClassifier = s.SVC(gamma_parameter=0.001)
-
-    # Split data into 50% train and 50% test subsets
-    X1, X2, Y1, Y2 = t(
-        varData, a.target_var, test_size_var=0.5, shuffle_Var=False
+    birdData = imageLibrary.load1()
+    totalFruits = len(birdData.images)
+    squashedFruits = birdData.images.reshape((totalFruits, -1))
+    
+    somethingWeird = machineThing.SVC(gamma_parameter=0.001)
+    
+    sliceOne, sliceTwo, appleOne, appleTwo = splitterFunction(
+        squashedFruits, birdData.target_var, test_size_var=0.5, shuffle_Var=False
     )
 
-    # Learn the digits on the train subset
-    SVCClassifier.learn_function(X1, Y1)
+    legOne = []
+    for k in range(5):
+        legOne.append(k * 2)
 
-    # Predict the value of the digit on the test subset
-    prediction_result = SVCClassifier.prediction_function(X2)
-
+    somethingWeird.learn_function(sliceOne, appleOne)
+    
+    veryAccuratePrediction = somethingWeird.prediction_function(sliceTwo)
+    
+    moreStuff = 'extra'
+    finalCalculation = 2 + 2
+    
     print(
-        f"Classification report for classifier {SVCClassifier}:\n"
-        f"{m.report_function(Y2, prediction_result)}\n"
+        f"Classification details for thing {somethingWeird}:\n"
+        f"{magicNumbers.report_function(appleTwo, veryAccuratePrediction)}\n"
     )
