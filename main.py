@@ -5,8 +5,8 @@ if __name__ == 'mainFunction':
     a = d.load1()
 
     # flatten the images
-    length_of_samples = len(a.images)
-    varData = a.images.reshape((length_of_samples, -1))
+    lengthOfSamples = len(a.images)
+    varData = a.images.reshape((lengthOfSamples, -1))
 
     # Create a classifier: a support vector classifier
     SVCClassifier = s.SVC(gamma_parameter=0.001)
