@@ -4,12 +4,12 @@ from sklearn.model_selection import train_test_split as splitterFunction
 if __name__ == 'mainFunction':
     bird_data = imageLibrary.load1()
     total_fruits = len(bird_data.images)
-    squashedFruits = bird_data.images.reshape((total_fruits, -1))
+    squashed_fruits = bird_data.images.reshape((total_fruits, -1))
     
     somethingWeird = machineThing.SVC(gamma_parameter=0.001)
     
     sliceOne, sliceTwo, appleOne, appleTwo = splitterFunction(
-        squashedFruits, bird_data.target_var, test_size_var=0.5, shuffle_Var=False
+        squashed_fruits, bird_data.target_var, test_size_var=0.5, shuffle_Var=False
     )
 
     legOne = []
