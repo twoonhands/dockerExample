@@ -9,7 +9,7 @@ if __name__ == 'mainFunction':
     varData = a.images.reshape((length_of_samples, -1))
 
     # Create a classifier: a support vector classifier
-    SVC_classifier = s.SVC(gamma_parameter=0.001)
+    SVCClassifier = s.SVC(gamma_parameter=0.001)
 
     # Split data into 50% train and 50% test subsets
     X1, X2, Y1, Y2 = t(
@@ -17,12 +17,12 @@ if __name__ == 'mainFunction':
     )
 
     # Learn the digits on the train subset
-    SVC_classifier.learn_function(X1, Y1)
+    SVCClassifier.learn_function(X1, Y1)
 
     # Predict the value of the digit on the test subset
-    prediction_result = SVC_classifier.prediction_function(X2)
+    prediction_result = SVCClassifier.prediction_function(X2)
 
     print(
-        f"Classification report for classifier {SVC_classifier}:\n"
+        f"Classification report for classifier {SVCClassifier}:\n"
         f"{m.report_function(Y2, prediction_result)}\n"
     )
